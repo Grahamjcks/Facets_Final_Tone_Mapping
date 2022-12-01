@@ -14,7 +14,7 @@ def loadExposureSeq(path):
         times.append(1 / float(tokens[1]))
     return images, np.asarray(times, dtype=np.float32)
 
-images, times = loadExposureSeq(r'C:\Users\user\Desktop\exposureseq')
+images, times = loadExposureSeq('./exposureseq')
 
 calibrateDebevec = cv.createCalibrateDebevec()
 responseDebevec = calibrateDebevec.process(images, times)
